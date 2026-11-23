@@ -1,57 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#bfb9c2">
+    <meta name="description" content="Uma calculadora simples para as contas do dia a dia.">
+    <title>Calculator | Lívia Marques</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
+  </head>
+  <body>
+    <main class="page">
+      <section class="calculator" aria-labelledby="calculator-title">
+        <header class="calculator__header">
+          <span class="calculator__icon" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <div>
+            <h1 id="calculator-title">Calculator</h1>
+          </div>
+        </header>
 
-    <div class="calculator">
-        <input type="text" id="inputBox" placeholder="0" readonly>
-
-        <div>
-            <button class="primeiro-button">AC</button>
-            <button class="primeiro-button">DEL</button>
-            <button class="primeiro-button">%</button>
-            <button class="primeiro-button">/</button>
+        <div class="display">
+          <output id="inputBox" aria-label="Visor da calculadora" aria-live="polite">0</output>
         </div>
 
-        <div>
-            <button class="segundo-button">7</button>
-            <button class="segundo-button">8</button>
-            <button class="segundo-button">9</button>
-            <button class="segundo-button">*</button>
+        <div class="keypad" aria-label="Teclas da calculadora">
+          <button type="button" class="key key--utility" aria-label="Limpar tudo">AC</button>
+          <button type="button" class="key key--utility" aria-label="Apagar último caractere">DEL</button>
+          <button type="button" class="key key--utility" aria-label="Porcentagem">%</button>
+          <button type="button" class="key key--operator" aria-label="Dividir">/</button>
+
+          <button type="button" class="key">7</button>
+          <button type="button" class="key">8</button>
+          <button type="button" class="key">9</button>
+          <button type="button" class="key key--operator" aria-label="Multiplicar">*</button>
+
+          <button type="button" class="key">4</button>
+          <button type="button" class="key">5</button>
+          <button type="button" class="key">6</button>
+          <button type="button" class="key key--operator" aria-label="Subtrair">-</button>
+
+          <button type="button" class="key">1</button>
+          <button type="button" class="key">2</button>
+          <button type="button" class="key">3</button>
+          <button type="button" class="key key--operator" aria-label="Somar">+</button>
+
+          <button type="button" class="key">00</button>
+          <button type="button" class="key">0</button>
+          <button type="button" class="key">.</button>
+          <button type="button" class="key key--equals" aria-label="Calcular resultado">=</button>
         </div>
-
-        <div>
-            <button class="terceiro-button">4</button>
-            <button class="terceiro-button">5</button>
-            <button class="terceiro-button">6</button>
-            <button class="terceiro-button">-</button>
-        </div>
-
-        <div>
-            <button class="quarto-button">1</button>
-            <button class="quarto-button">2</button>
-            <button class="quarto-button">3</button>
-            <button class="quarto-button">+</button>
-        </div>
-
-        <div>
-            <button class="quinto-button">00</button>
-            <button class="quinto-button">0</button>
-            <button class="quinto-button">.</button>
-            <button class="quinto-button">=</button>
-        </div>
-       
-    </div>
-
-
+      </section>
+    </main>
     <script src="script.js"></script>
-
-
-</body>
+  </body>
 </html>

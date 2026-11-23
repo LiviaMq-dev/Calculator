@@ -1,31 +1,30 @@
-let input = document.getElementById('inputBox');
-let buttons = document.querySelectorAll('button');
+const input = document.getElementById('inputBox');
+const buttons = document.querySelectorAll('.keypad button');
 
 let string = "";
-let arr = Array.from(buttons);
 
-arr.forEach(button => {
-    button.addEventListener('click', (e) => {
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
 
-        let value = e.target.innerHTML;
+        const value = button.textContent.trim();
 
         if (value === '=') {
 
             if (string === "") return;
 
             try {
-                let result = eval(string);
+                const result = eval(string);
 
-                if (isNaN(result) || result === Infinity || result === -Infinity) {
-                    input.value = "Indefinite";
+                if (!Number.isFinite(result)) {
+                    input.textContent = "Indefinite";
                     string = "";
                 } else {
                     string = result.toString();
-                    input.value = string;
+                    input.textContent = string;
                 }
 
             } catch {
-                input.value = "Erro";
+                input.textContent = "Erro";
                 string = "";
             }
 
@@ -33,29 +32,19 @@ arr.forEach(button => {
         
         else if (value === 'AC') {
             string = "";
-            input.value = "";
+            input.textContent = "0";
         } 
         
         else if (value === 'DEL') {
             string = string.slice(0, -1);
-            input.value = string;
+            input.textContent = string || "0";
         } 
         
         else {
             string += value;
-            input.value = string;
+            input.textContent = string;
         }
 
     });
 });
-
-let lastTouchEnd = 0;
-
-document.addEventListener('touchend', function (event) {
-    let now = (new Date()).getTime();
-    if (now - lastTouchEnd <= 300) {
-        event.preventDefault();
-    }
-    lastTouchEnd = now;
-}, false);
 
